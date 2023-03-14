@@ -16,25 +16,34 @@ function App() {
       <h1>sweet dreams</h1>
       <p>I'd like to wake up at ...</p>
       <div>
-        <select
-          name="hour"
-          id=""
-          value={selectedHour}
-          onChange={handleHourChange}
-        >
-          {hours.map((hour) => (
-            <option key={hour} value={hour}>
-              {hour}
-            </option>
-          ))}
-        </select>
-        <select>
-          {minutes.map((minute) => (
-            <option key={minute} value={minutes}>
-              {minute}
-            </option>
-          ))}
-        </select>
+        <div className="waketime">
+          <select
+            name="hour"
+            id=""
+            value={selectedHour}
+            onChange={handleHourChange}
+          >
+            {hours.map((hour) => (
+              <option key={hour} value={hour}>
+                {hour}
+              </option>
+            ))}
+          </select>
+          <select>
+            {minutes.map((minute) => (
+              <option key={minute} value={minutes}>
+                {minute}
+              </option>
+            ))}
+          </select>
+          <select name="ampm" id="">
+            <option value="">AM</option>
+            <option value="">PM</option>
+          </select>
+        </div>
+        <input type="button" value="sleep" />
+        <p>or, find out when to wake up:</p>
+        <input type="button" value="sleep" />
       </div>
     </div>
   );
