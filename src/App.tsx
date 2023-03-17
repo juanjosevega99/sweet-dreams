@@ -36,7 +36,7 @@ function App() {
               </option>
             ))}
           </select>
-          <select name="ampm" id="">
+          <select id="ampm">
             <option value="">AM</option>
             <option value="">PM</option>
           </select>
