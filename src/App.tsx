@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>sweet dreams</h1>
+      <h1>sweet dream</h1>
       <p>I'd like to wake up at ...</p>
       <div>
         <div className="waketime">
