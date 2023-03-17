@@ -12,7 +12,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>sweet dreams</h1>
       <p>I'd like to wake up at ...</p>
       <div>
@@ -41,9 +41,9 @@ function App() {
             <option value="">PM</option>
           </select>
         </div>
-        <input type="button" value="sleep" />
+        <input type="button" value="sleep" className="button-primary" />
         <p>or, find out when to wake up:</p>
-        <input type="button" value="sleep" />
+        <input type="button" value="sleep" className="button-primary" />
       </div>
     </div>
   );
