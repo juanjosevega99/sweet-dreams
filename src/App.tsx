@@ -2,12 +2,25 @@ import { useState } from "react";
 import "./App.css";
 
 const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const minutes = ["00", "05", 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+const minutes = [
+  "00",
+  "05",
+  "10",
+  "15",
+  "20",
+  "25",
+  "30",
+  "35",
+  "40",
+  "45",
+  "50",
+  "55",
+];
 
 function App() {
   const [selectedHour, setSelectedHour] = useState(hours[0]);
 
-  const handleHourChange = (event) => {
+  const handleHourChange = (event: any) => {
     setSelectedHour(event.target.value);
   };
 
