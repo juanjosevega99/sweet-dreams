@@ -68,46 +68,44 @@ function App() {
       <div className="container">
         <h1>sweet dream</h1>
         <p>I'd like to wake up at ...</p>
-        <div>
-          <div className="waketime">
-            <select
-              name="hour"
-              id=""
-              value={selectedHour}
-              onChange={handleHourChange}
-            >
-              {hours.map((hour) => (
-                <option key={hour} value={hour}>
-                  {hour}
-                </option>
-              ))}
-            </select>
-            <select value={selectedMinute} onChange={handleMinuteChange}>
-              {minutes.map((minute) => (
-                <option key={minute} value={minute}>
-                  {minute}
-                </option>
-              ))}
-            </select>
-            <select id="ampm" value={selectedAmPm} onChange={handleAmPmChange}>
-              <option value="AM">AM</option>
-              <option value="PM">PM</option>
-            </select>
-          </div>
-          <input
-            type="button"
-            value="Go"
-            className="button-primary"
-            onClick={handleWakeUp}
-          />
-          <p>or, find out when to wake up:</p>
-          <input
-            type="button"
-            value="Sleep Now 🛌"
-            className="button-primary"
-            onClick={handleSleepNow}
-          />
+        <div className="waketime">
+          <select
+            name="hour"
+            id=""
+            value={selectedHour}
+            onChange={handleHourChange}
+          >
+            {hours.map((hour) => (
+              <option key={hour} value={hour}>
+                {hour}
+              </option>
+            ))}
+          </select>
+          <select value={selectedMinute} onChange={handleMinuteChange}>
+            {minutes.map((minute) => (
+              <option key={minute} value={minute}>
+                {minute}
+              </option>
+            ))}
+          </select>
+          <select id="ampm" value={selectedAmPm} onChange={handleAmPmChange}>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
         </div>
+        <input
+          type="button"
+          value="Go"
+          className="button-primary"
+          onClick={handleWakeUp}
+        />
+        <p>or, find out when to wake up:</p>
+        <input
+          type="button"
+          value="Sleep Now 🛌"
+          className="button-primary"
+          onClick={handleSleepNow}
+        />
       </div>
     );
   }
