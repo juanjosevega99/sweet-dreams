@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
-import { WakeUp } from "./components/WakeUp/index";
-import { SleepNow } from "./components/SleepNow/index";
+import { WakeUp } from "./components/WakeUp";
+import { SleepNow } from "./components/SleepNow";
 
 const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const minutes = [
