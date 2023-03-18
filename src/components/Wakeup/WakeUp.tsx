@@ -1,4 +1,10 @@
-export function WakeUp({ selectedHour, selectedMinute, selectedAmPm }) {
+interface WakeUpProps {
+  selectedHour: number
+  selectedMinute: number
+  selectedAmPm: string
+}
+
+export function WakeUp({ selectedHour, selectedMinute, selectedAmPm }: WakeUpProps) {
   let wakeUpHour = selectedHour % 12;
   if (selectedAmPm === "PM") {
     wakeUpHour += 12;

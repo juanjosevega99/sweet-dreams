@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleAmPmChange = (event: any) => {
-    selectedAmPm(parseInt(event.target.value));
+    setSelectedAmPm(event.target.value);
   };
 
   const handleWakeUp = () => {
@@ -78,8 +78,8 @@ function App() {
               ))}
             </select>
             <select id="ampm" onChange={handleAmPmChange}>
-              <option value="">AM</option>
-              <option value="">PM</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
             </select>
           </div>
           <input
