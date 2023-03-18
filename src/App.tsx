@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import { WakeUp } from "./components/Wakeup/WakeUp";
+import { SleepNow } from "./components/Sleepnow/SleepNow";
 
 const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const minutes = [
@@ -24,6 +25,7 @@ function App() {
   const [selectedMinute, setSelectedMinute] = useState(0);
   const [selectedAmPm, setSelectedAmPm] = useState("AM");
   const [showWakeUpTime, setShowWakeUpTime] = useState(false);
+  const [showSleepNow, setShowSleepNow] = useState(false);
 
   const handleHourChange = (event: any) => {
     setSelectedHour(parseInt(event.target.value));
@@ -41,16 +43,26 @@ function App() {
     setShowWakeUpTime(true);
   };
 
+  const handleSleepNow = () => {
+    setShowSleepNow(true);
+  };
+
+  const handleGoBack = () => {
+    setShowWakeUpTime(false);
+    setShowSleepNow(false);
+  };
+
   if (showWakeUpTime) {
     return (
-      <div>
-        <WakeUp
-          selectedHour={selectedHour}
-          selectedMinute={selectedMinute}
-          selectedAmPm={selectedAmPm}
-        />
-      </div>
+      <WakeUp
+        selectedHour={selectedHour}
+        selectedMinute={selectedMinute}
+        selectedAmPm={selectedAmPm}
+        goBack={handleGoBack}
+      />
     );
+  } else if (showSleepNow) {
+    return <SleepNow goBack={handleGoBack} />;
   } else {
     return (
       <div className="container">
@@ -70,14 +82,14 @@ function App() {
                 </option>
               ))}
             </select>
-            <select onChange={handleMinuteChange}>
+            <select value={selectedMinute} onChange={handleMinuteChange}>
               {minutes.map((minute) => (
-                <option key={minute} value={minutes}>
+                <option key={minute} value={minute}>
                   {minute}
                 </option>
               ))}
             </select>
-            <select id="ampm" onChange={handleAmPmChange}>
+            <select id="ampm" value={selectedAmPm} onChange={handleAmPmChange}>
               <option value="AM">AM</option>
               <option value="PM">PM</option>
             </select>
@@ -86,14 +98,14 @@ function App() {
             type="button"
             value="Go"
             className="button-primary"
-            // onClick={handleSleepButtonClick}
+            onClick={handleWakeUp}
           />
           <p>or, find out when to wake up:</p>
           <input
             type="button"
-            value="Sleep"
+            value="Sleep Now 🛌"
             className="button-primary"
-            onClick={handleWakeUp}
+            onClick={handleSleepNow}
           />
         </div>
       </div>
