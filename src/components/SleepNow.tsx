@@ -3,27 +3,23 @@ export function SleepNow({ goBack }: any) {
     goBack();
   };
 
-  // TODO: improve this function
-  function findCyclesToSleep(cyclesToSleep: number) {
+  function findWakeUpTime(cyclesToSleep: number) {
     const sleepCycleMinutes = 90; // 1.5 hours per sleep cycle
     const totalSleepMinutes = sleepCycleMinutes * cyclesToSleep;
     const timeToFallAsleepMinutes = 15; // 15 minutes to fall asleep
     const totalMinutesNeeded = totalSleepMinutes + timeToFallAsleepMinutes;
 
-    const wakeUpTime = new Date();
-    const sleepTime = new Date(
-      wakeUpTime.getTime() - totalMinutesNeeded * 60000
-    ); // 60000 ms per minute
+    const sleepTime = new Date(Date.now() + totalMinutesNeeded * 60000); // 60000 ms per minute
 
-    const sleepHour = sleepTime.getHours() % 12;
+    const sleepHour = sleepTime.getHours() % 12 || 12;
     const sleepMinute = sleepTime.getMinutes();
     const sleepAmPm = sleepTime.getHours() >= 12 ? "PM" : "AM";
 
-    return `${sleepHour}:${sleepMinute} ${sleepAmPm}`;
+    return `${sleepHour}:${sleepMinute.toString().padStart(2, '0')} ${sleepAmPm}`;
   }
 
-  const fiveCycles = findCyclesToSleep(5);
-  const sixCycles = findCyclesToSleep(6);
+  const fiveCycles = findWakeUpTime(5);
+  const sixCycles = findWakeUpTime(6);
 
   return (
     <div>

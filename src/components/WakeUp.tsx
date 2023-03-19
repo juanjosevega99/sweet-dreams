@@ -34,7 +34,7 @@ export function WakeUp({
       wakeUpTime.getTime() - totalMinutesNeeded * 60000
     ); // 60000 ms per minute
 
-    const sleepHour = sleepTime.getHours() % 12;
+    const sleepHour = sleepTime.getHours() % 12 || 12;
     const sleepMinute = sleepTime.getMinutes();
     const sleepAmPm = sleepTime.getHours() >= 12 ? "PM" : "AM";
 
@@ -43,11 +43,12 @@ export function WakeUp({
 
   const sixCycles = findTimeInCycles(6);
   const fiveCycles = findTimeInCycles(5);
+  const selectedMinuteString = selectedMinute.toString().padStart(2, "0");
 
   return (
     <div className="container">
       <h3>
-        I've to wake up at {selectedHour}:{selectedMinute} {selectedAmPm}
+        I've to wake up at {selectedHour}:{selectedMinuteString} {selectedAmPm}
       </h3>
       <p>Go to bed at one of the following times:</p>
 
