@@ -47,6 +47,7 @@ export function WakeUp({
 
   return (
     <div className="container">
+      <h1>sweet dream</h1>
       <h3>
         I've to wake up at {selectedHour}:{selectedMinuteString} {selectedAmPm}
       </h3>

@@ -15,15 +15,17 @@ export function SleepNow({ goBack }: any) {
     const sleepMinute = sleepTime.getMinutes();
     const sleepAmPm = sleepTime.getHours() >= 12 ? "PM" : "AM";
 
-    return `${sleepHour}:${sleepMinute.toString().padStart(2, '0')} ${sleepAmPm}`;
+    return `${sleepHour}:${sleepMinute
+      .toString()
+      .padStart(2, "0")} ${sleepAmPm}`;
   }
 
   const fiveCycles = findWakeUpTime(5);
   const sixCycles = findWakeUpTime(6);
 
   return (
-    <div>
-      <h1>sleep now</h1>
+    <div className="container">
+      <h1>sweet dream</h1>
       <p>Sleep now, wake up at:</p>
 
       <div className="box-times">
