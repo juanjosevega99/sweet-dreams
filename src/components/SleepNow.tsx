@@ -20,6 +20,7 @@ export function SleepNow({ goBack }: any) {
       .padStart(2, "0")} ${sleepAmPm}`;
   }
 
+  const fourCycles = findWakeUpTime(4);
   const fiveCycles = findWakeUpTime(5);
   const sixCycles = findWakeUpTime(6);
 
@@ -29,6 +30,7 @@ export function SleepNow({ goBack }: any) {
       <p>Sleep now, wake up at:</p>
 
       <div className="box-times">
+        <div className="time">{fourCycles} for 4 cycles</div>
         <div className="time">{fiveCycles} for 5 cycles</div>
         <div className="time">{sixCycles} for 6 cycles</div>
       </div>

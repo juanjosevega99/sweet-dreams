@@ -41,8 +41,9 @@ export function WakeUp({
     return `${sleepHour}:${sleepMinute} ${sleepAmPm}`;
   }
 
-  const sixCycles = findTimeInCycles(6);
+  const fourCycles = findTimeInCycles(4);
   const fiveCycles = findTimeInCycles(5);
+  const sixCycles = findTimeInCycles(6);
   const selectedMinuteString = selectedMinute.toString().padStart(2, "0");
 
   return (
@@ -54,8 +55,9 @@ export function WakeUp({
       <p>Go to bed at one of the following times:</p>
 
       <div className="box-times">
-        <div className="time">{sixCycles} for 6 cycles</div>
+        <div className="time">{fourCycles} for 4 cycles</div>
         <div className="time">{fiveCycles} for 5 cycles</div>
+        <div className="time">{sixCycles} for 6 cycles</div>
       </div>
 
       <input
