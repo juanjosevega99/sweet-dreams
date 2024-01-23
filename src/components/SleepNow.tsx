@@ -26,7 +26,6 @@ export function SleepNow({ goBack }: any) {
 
   return (
     <div className="container">
-      <h1>sweet dream</h1>
       <p>Sleep now, wake up at:</p>
 
       <div className="box-times">

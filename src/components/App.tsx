@@ -52,6 +52,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1>Sweet Dream</h1>
       {showWakeUpTime ? (
         <WakeUp
           selectedHour={selectedHour}
@@ -63,7 +64,6 @@ function App() {
         <SleepNow goBack={handleGoBack} />
       ) : (
         <>
-          <h1>sweet dream</h1>
           <p>I'd like to wake up at ...</p>
           <div className="waketime">
             <select id="" value={selectedHour} onChange={handleHourChange}>
